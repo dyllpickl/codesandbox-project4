@@ -1,0 +1,40 @@
+<%- include("partials/header.ejs") %>
+
+        <div class="container">
+            <h1 class="mb-4 mt-4">Blog Home Page</h1>
+            <div class="btn-toolbar">
+                <a href="/" class="btn btn-secondary mb-4" style="margin-right: 10px;">Login Page</a>
+                <a href="/posts/new" class="btn btn-success mb-4">Create a New Post</a>
+            </div>
+            <% if (posts.length == 0) { %>
+                <h3>No Posts Here!</h3>
+                <p>Create a blog post to display them on the home page!</p>
+            <% } else { %>
+                <% posts.forEach((post) => { %>
+                    <div class="card mb-5">
+                        <div class="card-body">
+                            <div class="card-subtitle"><%= post.author %></div>
+                            <h1 class="card-title"><%= post.title %></h1>
+                            <% if (!post.editDate) { %>
+                                <div class="card-subtitle mb-3">Created&nbsp;: <%= post.creationDate %></div>
+                                <div class="card-text mb-2"><%= post.content %></div>
+                                <div class="btn-toolbar">
+                                    <a href="/posts/edit/<%= post.blog_id %>" class="btn btn-secondary" style="margin-right: 10px;">Edit</a>
+                                    <a href="/posts/delete/<%= post.blog_id %>" class="btn btn-danger">Delete</a>
+                                </div>
+                            <% } else { %>
+                                <div class="card-subtitle mb-1">Created&nbsp;: <%= post.creationDate %></div>
+                                <div class="card-subtitle mb-3">Last Edit: <%= post.editDate %></div>
+                                <div class="card-text mb-2"><%= post.content %></div>
+                                <div class="btn-toolbar">
+                                    <a href="/posts/edit/<%= post.blog_id %>" class="btn btn-secondary" style="margin-right: 10px;">Edit</a>
+                                    <a href="/posts/delete/<%= post.blog_id %>" class="btn btn-danger">Delete</a>
+                                </div>
+                            <% } %>
+                        </div>
+                    </div>
+                <% }) %>
+            <% } %>
+        </div>
+    </body>
+</html>

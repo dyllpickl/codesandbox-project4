@@ -1,0 +1,30 @@
+<%- include("../partials/header.ejs") %>
+
+        <div class="container">
+            <h1 class="mb-4 mt-4">Edit Blog Post</h1>
+            <div class="card-body">
+                <form action="/posts/edit/<%= post_id %>" method="POST">
+                    <input type="hidden" name="creationDate" value="<%= post.creationDate %>">
+                    <input type="hidden" name="creationTime" value="<%= post.creationTime %>">
+                    <div class="form-group mb-4">
+                        <label for="edit_id">User_ID*</label>
+                        <input type="text" id="edit_id" name="edit_id" placeholder="5123" class="form-control" style="margin-bottom: 10px;" required>
+                        <label for="password">Password*</label>
+                        <input type="text" id="password" name="password" placeholder="johnlovescake" class="form-control" style="margin-bottom: 10px;" required>
+                    </div>
+                    <div class="form-group mb-4">
+                        <label for="title">Blog Title*</label>
+                        <input type="text" name="title" id="title" placeholder="My Blog Title" value="<%= post.title %>" class="form-control" required>
+                    </div>
+                    <div class="form-group mb-4">
+                        <label for="contents">Blog Contents*</label>
+                        <textarea type="text" name="contents" id="contents" placeholder="Blog Text Here" rows="5" cols="20" class="form-control" required><%= post.content %></textarea>
+                    </div>
+
+                    <a href="/blog" class="btn btn-secondary">Cancel</a>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

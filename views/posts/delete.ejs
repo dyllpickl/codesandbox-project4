@@ -1,0 +1,22 @@
+<%- include("../partials/header.ejs") %>
+
+        <div class="container">
+            <h1 class="mb-4 mt-4">Delete Blog Post</h1>
+            <div class="card-body">
+                <form action="/posts/delete/<%= post_id %>" method="POST">
+                    <input type="hidden" name="post_id" value="<%= post_id %>">
+                    <div class="form-group mb-4">
+                        <h3 class="mb-4 mt-4">Delete post "<%= post_title %>"?</h3>
+                        <label for="edit_id">User_ID*</label>
+                        <input type="text" id="edit_id" name="edit_id" placeholder="5123" class="form-control" style="margin-bottom: 10px;" required>
+                        <label for="password">Password</label>
+                        <input type="text" id="password" name="password" placeholder="johnlovescake" class="form-control" style="margin-bottom: 10px;" required>
+                    </div>
+
+                    <a href="/blog" class="btn btn-secondary">Cancel</a>
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

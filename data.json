@@ -1,0 +1,15 @@
+{
+  "users": [
+    {
+      "user_id": "123",
+      "username": "Dylang",
+      "password": "123"
+    },
+    {
+      "user_id": "321",
+      "username": "johndoe",
+      "password": "321"
+    }
+  ],
+  "blogs": []
+}
