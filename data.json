@@ -2,14 +2,46 @@
   "users": [
     {
       "user_id": "123",
-      "username": "Dylang",
+      "username": "DylanG",
       "password": "123"
     },
     {
       "user_id": "321",
-      "username": "johndoe",
+      "username": "JohnDoe",
       "password": "321"
     }
   ],
-  "blogs": []
+  "blogs": [
+    {
+      "blog_id": 1,
+      "username": "DylanG",
+      "creator_user_id": "123",
+      "password": "123",
+      "title": "So many new people!",
+      "content": "Welcome everyone!",
+      "date_created": "11/4/2024, 11:33:19 PM",
+      "creator_name": "DylanG",
+      "date_edited": "11/4/2024, 11:51:32 PM"
+    },
+    {
+      "blog_id": 3,
+      "username": "DylanG",
+      "creator_user_id": "123",
+      "password": "123",
+      "title": "Hello World!",
+      "content": "Hi everyone!",
+      "date_created": "11/4/2024, 11:50:35 PM",
+      "creator_name": "DylanG",
+      "date_edited": "11/4/2024, 11:51:10 PM"
+    },
+    {
+      "blog_id": 3,
+      "username": "JohnDoe",
+      "creator_user_id": "321",
+      "password": "321",
+      "title": "Hi!",
+      "content": "Hello!",
+      "date_created": "11/5/2024, 12:04:47 AM"
+    }
+  ]
 }
